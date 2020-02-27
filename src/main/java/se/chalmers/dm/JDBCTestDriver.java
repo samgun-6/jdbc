@@ -15,6 +15,13 @@ public class JDBCTestDriver {
 
     public static void main(String[] args) {
         // TODO: implement JDBC1
+        Connection c = null;
+        Statement stmt = null;
 
+        try {
+            Class.forName(DRIVER_CLASS);
+        }catch (Exeption e){
+
+        }
     }
 }
