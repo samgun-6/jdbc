@@ -1,9 +1,6 @@
 package se.chalmers.dm;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class JDBCTestDriver {
     // DB connection configuration
@@ -20,8 +17,18 @@ public class JDBCTestDriver {
 
         try {
             Class.forName(DRIVER_CLASS);
-        }catch (Exeption e){
+            c = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery( "SELECT 15 AS retval;");
+            System.out.println(rs);
+            rs.close();
+            stmt.close();
+            c.close();
+
+
+        }catch (Exception e){
+            System.out.println("wrongeeeeeeeeystgn");
         }
     }
 }
