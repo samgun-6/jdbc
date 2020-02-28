@@ -15,6 +15,20 @@ public class JDBCTestDriver {
 
     public static void main(String[] args) {
         // TODO: implement JDBC1
+        Connection c = null;
+        Statement stmt = null;
+        try{
+            Class.forName(DRIVER_CLASS);
+            c = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT 15 AS retval;");
+            System.out.println(rs);
+            rs.close();
+            stmt.close();
+            c.close();
+        }catch(Exception e){
+            System.out.println("Ooops something went wrong");
+        }
     }
 }
