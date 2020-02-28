@@ -1,0 +1,1 @@
+Select * from tbl_user WHERE isActive = false;
