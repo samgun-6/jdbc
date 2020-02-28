@@ -1,14 +1,8 @@
 package se.chalmers.dm;
-import com.github.javafaker.Address;
-import com.github.javafaker.Faker;
-import com.github.javafaker.IdNumber;
-import com.github.javafaker.Name;
-import com.github.javafaker.service.RandomService;
 
+import com.github.javafaker.Faker;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Random;
 
 public class Seeder {
@@ -35,7 +29,7 @@ public class Seeder {
 
     }
 
-    public void insertFakeUsers(int amount) throws SQLException {
+    public void insertFakeUsers(int amount) {
         try {
             statement = connection.prepareStatement(QueryHelper.sqlQuery("create_fake_user.sql"));
 
