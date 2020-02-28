@@ -17,9 +17,9 @@ public class SeederTestDriver {
          seeder.createUserTable();
          System.out.println("Inserting fake users");
          seeder.insertFakeUsers(12);
-        // System.out.println("Creating web page table");
-        // seeder.createWebPageTable();
-        // System.out.println("Inserting fake users with webpage");
-        // seeder.insertFakeUsersWithWebPage(200);
+         System.out.println("Creating web page table");
+         seeder.createWebPageTable();
+         System.out.println("Inserting fake users with webpage");
+         seeder.insertFakeUsersWithWebPage(200);
     }
 }

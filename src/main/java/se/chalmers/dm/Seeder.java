@@ -51,6 +51,16 @@ public class Seeder {
     }
 
     public void createWebPageTable(){
+        try {
+            statement = connection.prepareStatement(QueryHelper.sqlQuery("create_webpage_table.sql"));
+            statement.execute();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Seeder failure");
+        }
+    }
+
+    public void insertFakeUsersWithWebPage(int i) {
 
     }
 }
